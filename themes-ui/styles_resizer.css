@@ -1,0 +1,41 @@
+/*
+*      {  margin:0; padding:0;
+  font-family:Arial, Helvetica, sans-serif; text-decoration:none;}
+*/
+
+#controls a {
+  font-size: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  color: #aaa;
+  font-weight: bold;
+  padding: 5px;
+}
+
+#controls {
+  padding-top: 10px;
+}
+
+#controls a:hover {
+  color: #fff;
+  background: #000;
+  transition: 0.25s ease-out;
+}
+
+.btn_selected {
+  background: #000;
+  color: #fff !important;
+}
+
+/*#small     {  font-size:10px !important;} */
+#decrease {
+  font-size: 14px !important;
+}
+#increase {
+  font-size: 18px !important;
+}
+
+.resizable {
+  font-size: 14px;
+  line-height: 20px;
+}

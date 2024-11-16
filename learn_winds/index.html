@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en-US">
+<![endif]-->
+<!--[if !(IE 7) & !(IE 8)]><!-->
+<html lang="en-US" class="hydrated"><!--<![endif]-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Winds | </title>
+    
+    <link rel="stylesheet" href="../themes-ui/lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../themes-ui/assets/css/style.css">
+    <link rel="stylesheet" href="../themes-ui/assets/css/non-responsive.css">
+    <link rel="stylesheet" href="../themes-ui/assets/css/print.css" media="print">
+
+    <script src="../themes-ui/lib/jquery/jquery-3.7.1.min.js"></script>
+    <script src="../themes-ui/assets/js/global1.0.min.js"></script>
+    <script src="../themes-ui/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../themes-ui/js/utils1.0.js"></script>
+    <script src="../themes-ui/js/utils1.0.js"></script>
+    <script src="../themes-ui/js/bs-initialization.js"></script>
+    
+    <!-- js -->
+    <link rel="stylesheet" href="../assets/js/main.js">
+</head>
+
+<body>
+    <header>
+        <link href="https://www.weather.gov.sg/wp-content/themes/wiptheme/styles_resizer.css" rel="stylesheet">
+        <div class="container">
+            <div class="row logo-container">
+                <div class="col-6"> <a href="https://www.weather.gov.sg/home/"><img
+                            src="https://www.weather.gov.sg/wp-content/themes/wiptheme/assets/img/mss-logo.png"
+                            alt="MSS" width="254" height="71"></a> </div>
+                <div class="col-6">
+                    <div class="sub-logo-container"> <a href="http://www.gov.sg"><img
+                                src="https://www.weather.gov.sg/wp-content/themes/wiptheme/assets/img/sg-gov-logo.jpg"
+                                alt="Singapore Government" width="220" height="30"></a> </div>
+                    <div class="top-nav">
+                        <ul class="list-inline donotresize">
+                            <li class="list-inline-item donotresize">
+                                <div id="controls"> <span id="nowTextPercent" class="donotresize">100%</span> <a
+                                        style="border-bottom:none;" href="#" id="decrease"
+                                        class="selected donotresize">A<sup>-</sup></a> <a style="border-bottom:none;"
+                                        href="#" id="increase" class="donotresize">A<sup>+</sup></a> </div>
+                            </li>
+                            <li class="list-inline-item donotresize"><a class="donotresize"
+                                    href="https://www.weather.gov.sg/about-contact-us/">Contact Us</a></li>
+                            <li class="list-inline-item donotresize">
+                                <form role="search" method="get" id="searchformcms" class="searchform"
+                                    action="https://www.weather.gov.sg/">
+                                    <div class="search-container">
+                                        <button type="submit" id="searchsubmitcms"><img alt="search"
+                                                src="https://www.weather.gov.sg/wp-content/themes/wiptheme/assets/img/icon-search.png"></button>
+                                        <input type="text" value="" name="s" id="scms" placeholder="Search">
+                                    </div>
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <nav class="navbar navbar-expand-lg navbar-dark navbar-inverse main-nav" role="navigation">
+                <ul class="nav navbar-nav d-flex flex-row">
+                    <li class="nav-item donotresize "> <a href="#" class="nav-link dropdown-toggle donotresize"
+                            role="button" data-bs-toggle="dropdown">Weather</a>
+                        <div class="dropdown-menu" role="menu">
+                            <div class="row">
+                                <div class="col-2 col-auto">
+                                    <div class="dropdown-header">
+                                        <h3 class="donotresize">Forecasts</h3>
+                                        <ul class="list-unstyled donotresize">
+                                            <li class="dropdown-item donotresize"><a class="donotresize"
+                                                    href="https://www.weather.gov.sg/weather-forecast-2hrnowcast/">2-hr
+                                                    Nowcast</a></li>
+                                            <li class="dropdown-item donotresize"><a class="donotresize"
+                                                    href="https://www.weather.gov.sg/weather-forecast-24hrforecast/">24-hr
+                                                    Forecast</a></li>
+                                            <li class="dropdown-item donotresize"><a class="donotresize"
+                                                    href="https://www.weather.gov.sg/weather-forecast-4dayoutlook/">4-Day
+                                                    Outlook</a></li>
+                                            <li class="dropdown-item donotresize"><a class="donotresize"
+                                                    href="https://www.weather.gov.sg/weather-fortnightly-outlook/">Fortnightly
+                                                    Outlook</a></li>
+                                            <li class="dropdown-item donotresize"><a class="donotresize"
+                                                    href="https://www.weather.gov.sg/weather-forecast-monsoon-update/">Monsoon
+                                                    Update</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="dropdown-header">
+                                        <h3 class="donotresize"><a class="donotresize"
+                                                href="https://www.weather.gov.sg/weather-world-forecast">World Forecasts
+                                            </a></h3>
+                                    </div>
+                                </div>
+                                <div class="col-3 col-auto">
+                                    <div class="dropdown-header">
+                                        <h3 class="donotresize">Marine Forecasts</h3>
+                                        <ul class="list-unstyled donotresize">
+                                            <li class="dropdown-item donotresize"><a class="donotresize"
+                                                    href="https://www.weather.gov.sg/weather-marine-waves-height">Significant
+                                                    Wave</a></li>
+                                            <li class="dropdown-item donotresize"><a class="donotresize"
+                                                    href="https://www.weather.gov.sg/weather-marine-wind-waves">Wind
+                                                    Wave</a></li>
+                                            <li class="dropdown-item donotresize"><a class="donotresize"
+                                                    href="https://www.weather.gov.sg/weather-marine-swell">Swell</a>
+                                            </li>
+                                            <li class="dropdown-item donotresize"><a class="donotresize"
+                                                    href="https://www.weather.gov.sg/weather-marine-surface-wind">Surface
+                                                    Wind</a></li>
+                                            <li class="dropdown-item donotresize"><a class="donotresize"
+                                                    href="https://www.weather.gov.sg/weather-marine-shipping-bulletin">Marine
+                                                    Weather</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="dropdown-header">
+                                        <h3 class="donotresize"><a class="donotresize" target="_blank"
+                                                href="https://www.weather.gov.sg/lightning/">Lightning Information</a>
+                                        </h3>
+                                    </div>
+                                </div>
+                                <div class="col-3 col-auto">
+                                    <div class="dropdown-header">
+                                        <h3 class="donotresize">Current Observations</h3>
+                                        <ul class="list-unstyled donotresize">
+                                            <li class="dropdown-item donotresize"><a class="donotresize"
+                                                    href="https://www.weather.gov.sg/weather-currentobservations-rainfall/">Rainfall</a>
+                                            </li>
+                                            <li class="dropdown-item donotresize"><a class="donotresize"
+                                                    href="https://www.weather.gov.sg/weather-currentobservations-temperature/">Temperature</a>
+                                            </li>
+                                            <li class="dropdown-item donotresize"><a class="donotresize"
+                                                    href="https://www.weather.gov.sg/weather-currentobservations-relative-humidity/">Relative
+                                                    Humidity</a></li>
+                                            <li class="dropdown-item donotresize"><a class="donotresize"
+                                                    href="https://www.weather.gov.sg/weather-currentobservations-wind/">Wind</a>
+                                            </li>
+                                            <li class="dropdown-item donotresize"><a class="donotresize"
+                                                    href="https://www.weather.gov.sg/weather-currentobservations-visibility/">Visibility</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="dropdown-header">
+                                        <h3 class="donotresize"><a class="donotresize"
+                                                href="https://www.weather.gov.sg/weather-uv">Ultraviolet Index (UVI)
+                                            </a></h3>
+                                    </div>
+                                </div>
+                                <div class="col-2 col-auto">
+                                    <div class="dropdown-header">
+                                        <h3 class="donotresize">Rain Areas</h3>
+                                        <ul class="list-unstyled donotresize">
+                                            <li class="dropdown-item donotresize"><a class="donotresize"
+                                                    href="https://www.weather.gov.sg/weather-rain-area-50km">Singapore</a>
+                                            </li>
+                                            <li class="dropdown-item donotresize"><a class="donotresize"
+                                                    href="https://www.weather.gov.sg/weather-rain-area-240km">240km
+                                                    Range</a></li>
+                                            <li class="dropdown-item donotresize"><a class="donotresize"
+                                                    href="https://www.weather.gov.sg/weather-rain-area-480km">480km
+                                                    Range</a></li>
+                                            <li class="dropdown-item donotresize">&nbsp;</li>
+                                            <li class="dropdown-item donotresize">&nbsp;</li>
+                                        </ul>
+                                    </div>
+                                    <div class="dropdown-header">
+                                        <h3><a href="https://www.weather.gov.sg/heat-stress">Heat Stress</a></h3>
+                                    </div>
+                                </div>
+                                <div class="col-2 col-auto">
+                                    <div class="dropdown-header">
+                                        <h3 class="donotresize">Satellite Images</h3>
+                                        <ul class="list-unstyled donotresize">
+                                            <li class="dropdown-item donotresize"><a class="donotresize"
+                                                    href="https://www.weather.gov.sg/weather-satellite-geo-stationary/">Geostationary
+                                                    Satellite</a></li>
+                                            <li class="dropdown-item donotresize"><a class="donotresize"
+                                                    href="https://www.weather.gov.sg/weather-satellite-polar-orbiting/">Polar
+                                                    Orbiting Satellite</a></li>
+                                            <li class="dropdown-item donotresize">&nbsp;</li>
+                                            <li class="dropdown-item donotresize">&nbsp;</li>
+                                            <li class="dropdown-item donotresize">&nbsp;</li>
+                                        </ul>
+                                    </div>
+                                    <div class="dropdown-header">
+                                        <h3 class="donotresize"><a class="text-wrap donotresize"
+                                                href="https://www.weather.gov.sg/weather-astronomical-and-tidal-information-today">Astronomical
+                                                Data and Tides </a></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- / .dropdown-menu -->
+                    </li>
+                    <li class="nav-item donotresize"> <a href="#" class="nav-link dropdown-toggle donotresize"
+                            role="button" data-bs-toggle="dropdown">Warnings and Advisories</a>
+                        <div class="dropdown-menu" role="menu">
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="dropdown-header">
+                                        <h3 class="dropdown-item donotresize"><a class="donotresize"
+                                                href="https://www.weather.gov.sg/warning-heavy-rain/">Heavy Rain Warning
+                                            </a></h3>
+                                    </div>
+                                    <div class="dropdown-header">
+                                        <h3 class="dropdown-item donotresize">Haze Information</h3>
+                                        <ul class="dropdown-item donotresize">
+                                            <li class="donotresize"><a class="donotresize"
+                                                    href="https://www.weather.gov.sg/warning-haze-satellite-image/">Latest
+                                                    Satellite Image</a></li>
+                                            <li class="donotresize"><a class="donotresize"
+                                                    href="https://www.weather.gov.sg/warning-haze-information/">Regional
+                                                    Haze Map</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="dropdown-header">
+                                        <h3 class="dropdown-item donotresize"><a class="donotresize"
+                                                href="https://www.weather.gov.sg/warning-tropical-cyclone-information/">Tropical
+                                                Cyclone Information</a></h3>
+                                    </div>
+                                    <div class="dropdown-header">
+                                        <h3 class="dropdown-item donotresize"><a class="donotresize"
+                                                href="https://www.weather.gov.sg/warning-regional-seismic-information/">Regional
+                                                Earthquake/Tsunami</a></h3>
+                                    </div>
+                                    <div class="dropdown-header">
+                                        <h3 class="dropdown-item donotresize"><a class="donotresize"
+                                                href="https://www.weather.gov.sg/warning-volcanic-eruption/">Regional
+                                                Volcanic Eruptions </a></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- / .dropdown-menu -->
+                    </li>
+                    <li class="nav-item donotresize"> <a href="#" class="nav-link dropdown-toggle donotresize"
+                            data-bs-toggle="dropdown">Climate</a>
+                        <div class="dropdown-menu" role="menu">
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="dropdown-header">
+                                        <h3 class="dropdown-item donotresize"><a class="donotresize"
+                                                href="https://www.weather.gov.sg/climate-historical-daily/">Historical
+                                                Daily Records </a></h3>
+                                    </div>
+                                    <div class="dropdown-header">
+                                        <h3 class="dropdown-item donotresize">Historical Extremes</h3>
+                                        <ul class="dropdown-item donotresize">
+                                            <li class="donotresize"><a class="donotresize"
+                                                    href="https://www.weather.gov.sg/climate-historical-extremes/">Rainfall</a>
+                                            </li>
+                                            <li class="donotresize"><a class="donotresize"
+                                                    href="https://www.weather.gov.sg/climate-historical-extremes-temperature/">Temperature</a>
+                                            </li>
+                                            <li class="donotresize"><a class="donotresize"
+                                                    href="https://www.weather.gov.sg/climate-historical-extremes-humidity/">Relative
+                                                    Humidity</a></li>
+                                            <li class="donotresize"><a class="donotresize"
+                                                    href="https://www.weather.gov.sg/climate-historical-extremes-wind/">Wind</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="dropdown-header">
+                                        <h3 class="dropdown-item donotresize">Climate Maps</h3>
+                                        <ul class="dropdown-item donotresize">
+                                            <li class="donotresize"><a class="donotresize"
+                                                    href="https://www.weather.gov.sg/climate-detailed-view/">Monthly and
+                                                    Annual Maps</a></li>
+                                            <li class="donotresize"><a class="donotresize"
+                                                    href="https://www.weather.gov.sg/climate-trends/">Overview of All
+                                                    Annual Maps</a></li>
+                                            <li class="donotresize"><a class="donotresize"
+                                                    href="https://www.weather.gov.sg/climate-normals/">Climate
+                                                    Normals</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="dropdown-header">
+                                        <h3 class="dropdown-item donotresize"><a class="donotresize"
+                                                href="https://www.weather.gov.sg/climate-climate-of-singapore/">Climate
+                                                Of Singapore </a></h3>
+                                    </div>
+                                    <div class="dropdown-header">
+                                        <h3 class="dropdown-item donotresize"><a class="donotresize"
+                                                href="https://www.weather.gov.sg/climate-world-climate/">World Climate
+                                            </a></h3>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="dropdown-header">
+                                        <h3 class="dropdown-item donotresize"><a class="donotresize"
+                                                href="https://www.weather.gov.sg/climate-past-climate-trends/">Past
+                                                Climate Trends </a></h3>
+                                    </div>
+                                    <div class="dropdown-header">
+                                        <h3 class="dropdown-item donotresize"><a class="donotresize"
+                                                href="https://www.weather.gov.sg/climate-annual-climate-reports/">Annual
+                                                Reports </a></h3>
+                                    </div>
+                                    <div class="dropdown-header">
+                                        <h3 class="dropdown-item donotresize"><a class="donotresize"
+                                                href="https://www.weather.gov.sg/climate-el-la/">El Niño / La Niña
+                                                Status </a></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- / .dropdown-menu -->
+                    </li>
+                    <li class="nav-item active donotresize"> <a href="#" class="nav-link dropdown-toggle donotresize"
+                            data-bs-toggle="dropdown">Learn</a>
+                        <div id="unresize1" class="dropdown-menu" role="menu">
+                            <div class="row donotresize">
+                                <div class="col-12 donotresize">
+                                    <div class="dropdown-header donotresize">
+                                        <h3 class="donotresize">Learn</h3>
+                                        <ul class="list-unstyled donotresize">
+                                            <li class="list-inline-item donotresize"><a href="../learn_overview/"
+                                                    class="donotresize">Overview</a></li>
+                                            <li class="list-inline-item donotresize" style="margin-left:120px"><a
+                                                    href="../learn_winds/" class="donotresize">Winds</a></li>
+                                            <li class="list-inline-item donotresize" style="margin-left:54px"><a
+                                                    href="../learn_weather_systems/" class="donotresize">Weather
+                                                    Systems</a></li>
+                                            <li class="list-inline-item donotresize" style="margin-left:89px"><a
+                                                    href="../learn_phenomena/" class="donotresize">Severe Weather</a>
+                                            </li>
+                                            <li class="list-inline-item donotresize" style="margin-left:54px"><a
+                                                    href="../learn_climate/" class="donotresize">Climate</a></li>
+                                            <li class="list-inline-item donotresize" style="margin-left:96px"><a
+                                                    href="../learn_tidal/" class="donotresize">Tides</a></li>
+                                        </ul>
+                                        <ul class="list-unstyled donotresize">
+                                            <li class="list-inline-item donotresize"><a href="../learn_atmosphere/"
+                                                    class="donotresize">Earth’s Atmosphere</a></li>
+                                            <li class="list-inline-item donotresize" style="margin-left:54px"><a
+                                                    href="../learn_clouds/" class="donotresize">Clouds</a></li>
+                                            <li class="list-inline-item donotresize" style="margin-left:50px"><a
+                                                    href="../learn_observations/" class="donotresize">Observing the
+                                                    Weather</a></li>
+                                            <li class="list-inline-item donotresize" style="margin-left:56px"><a
+                                                    href="../forecasting-2/" class="donotresize">Forecasting</a></li>
+                                            <li class="list-inline-item donotresize" style="margin-left:81px"><a
+                                                    href="../learn-optical-effects/" class="donotresize">Optical
+                                                    Effects</a></li>
+                                            <li class="list-inline-item donotresize" style="margin-left:54px"><a
+                                                    href="../learn_earthquakes/" class="donotresize">Earthquakes and
+                                                    Volcanoes</a></li>
+                                        </ul>
+                                        <ul class="list-unstyled mt-1 donotresize">
+                                            <li class="list-inline-item donotresize"><a href="../learn-heat-stress/"
+                                                    class="donotresize">Heat Stress</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item donotresize"> <a href="#" class="nav-link dropdown-toggle donotresize"
+                            data-bs-toggle="dropdown">About MSS</a>
+                        <div id="unresize2" class="dropdown-menu" role="menu">
+                            <div class="row donotresize">
+                                <div class="col-12 donotresize">
+                                    <div class="dropdown-header donotresize">
+                                        <h3 class="donotresize">About</h3>
+                                        <ul class="list-unstyled donotresize">
+                                            <li class="list-inline-item donotresize"><a href="/about-our-organisation/"
+                                                    class="donotresize">Our Organisation</a></li>
+                                            <li class="list-inline-item donotresize" style="margin-left: 110px;"><a
+                                                    href="/about-our-organisation/#vision" class="donotresize">Our
+                                                    Mission and Vision</a></li>
+                                            <li class="list-inline-item donotresize" style="margin-left: 80px;"><a
+                                                    href="/about-corporate-logo/" class="donotresize">Corporate Logo</a>
+                                            </li>
+                                            <li class="list-inline-item donotresize" style="margin-left: 100px;"><a
+                                                    href="/home-all-news/?yearnews=2015" class="donotresize">News</a>
+                                            </li>
+                                            <li class="list-inline-item donotresize" style="margin-left: 105px;"><a
+                                                    href="/visitus/" class="donotresize">Visit Us</a></li>
+                                        </ul>
+                                        <ul class="list-unstyled donotresize">
+                                            <li class="list-inline-item donotresize"><a
+                                                    href="/about-our-organisation/#structure"
+                                                    class="donotresize">Organisation Structure</a></li>
+                                            <li class="list-inline-item donotresize" style="margin-left: 76px;"><a
+                                                    href="/about-MSS-timeline/" class="donotresize">Our History</a></li>
+                                            <li class="list-inline-item donotresize" style="margin-left: 154px;"><a
+                                                    href="/about-our-organisation/" class="donotresize">Corporate
+                                                    Video</a></li>
+                                            <li class="list-inline-item donotresize" style="margin-left: 95px;"><a
+                                                    href="/about-career/" class="donotresize">Careers</a></li>
+                                            <li class="list-inline-item donotresize" style="margin-left: 89px;"><a
+                                                    href="/about-contact-us/" class="donotresize">Contact Us</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- / .dropdown-menu -->
+                    </li>
+                    <li class="nav-item donotresize"> <a class="nav-link dropdown-toggle donotresize"
+                            href="https://www.weather.gov.sg/faq/">FAQ</a> </li>
+                </ul> <!-- / .container-fluid -->
+            </nav>
+            <script
+                type="text/javascript">$(function () { $('#unresize1').find('*').addClass('donotresize'); $('#unresize2').find('*').addClass('donotresize'); })</script>
+        </div>
+    </header>
+    <!-- Main -->
+    <div class="main">
+
+        <div class="container">
+            <!--  -->
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="active breadcrumb-item">Learn </li>
+                <li class="active breadcrumb-item"> Winds</li>
+            </ol>
+
+            <!--  -->
+            <div class="page-title">
+                <h1> Winds</h1>
+            </div>
+
+            <!--  -->
+            <div class="share-group">
+                <ul class="list-inline">
+                    <li class="list-inline-item">Share this page</li>
+                    <li class="list-inline-item">
+                        <div class="fb-share-button" data-bs-layout="icon"
+                            data-bs-href="https://developers.facebook.com/docs/plugins/"></div>
+                    </li>
+                    <li class="list-inline-item"><a class="share-link"
+                            href="https://plus.google.com/share?url=http://www.nea.gov.sg/"><img decoding="async"
+                                src="../assets/images/icon-gplus-black.png" alt="Share on Google+"></a></li>
+                    <li class="list-inline-item"><a class="twitter-share-button"
+                            href="https://twitter.com/share?count=none"><img decoding="async"
+                                src="../assets/images/icon-twitter-black.png" alt="Share on Twitter"></a></li>
+                </ul>
+            </div>
+
+            <!-- component -->
+            <div class="nav-tab-body tab-content">
+                <div class="atmosphere-block">
+                    <div class="row">
+                        <!-- left -->
+                        <div class="col-9">
+                            <h3>Winds can take the form of a gentle breeze or a raging hurricane</h3>
+                            <div class="atmosphere-block-list">
+                                <div id="accordion_atmosphere" class="panel-group">
+                                    <div class="panel panel-default">
+                                        <div id="atmosphere1" class="panel-heading border"
+                                            data-bs-target="#collapseOne" data-bs-parent="#accordion_atmosphere"
+                                            data-bs-toggle="collapse"><strong>Global winds</strong><span
+                                                class="dropdown-arrow">&nbsp;</span></div>
+                                        <div id="collapseOne" class="panel-collapse collapse show">
+                                            <div class="panel-body">
+                                                <div class="inner-collapse-heading"
+                                                    data-bs-target="#accordion_atmosphere_inner1"
+                                                    data-bs-toggle="collapse">
+                                                    <p>Winds blow wherever there is a difference in air temperature and
+                                                        pressure, always flowing from high to low pressure. The world’s
+                                                        winds are part of the global air circulation that transports
+                                                        warm air from the equator to the poles, and cold air the
+                                                        opposite way, thus keeping global temperatures in balance.</p>
+                                                    <p>&nbsp;</p>
+                                                    <p><a href="/wp-content/uploads/2015/03/Global-circulation.png"><img
+                                                                fetchpriority="high" decoding="async"
+                                                                class="aligncenter size-full wp-image-2204"
+                                                                src="../assets/images/Global-circulation.png"
+                                                                alt="Global circulation" width="320" height="241"></a>
+                                                    </p>
+                                                    <p style="text-align: center;"><em>&nbsp;Schematic of the global
+                                                            circulation (Image credit: COMET)</em></p>
+                                                    <p>Winds are described by the direction they blow from – an easterly
+                                                        wind blows from the east, a northerly from the north. Prevailing
+                                                        winds, those that blow fairly steadily, are arranged in a series
+                                                        of belts around the globe.</p>
+                                                    <p>&nbsp;</p>
+                                                    <p>Due to the earth’s rotation, winds deflect to the right north of
+                                                        the equator, and to the left south of the equator. This is known
+                                                        as the Coriolis effect, which produces global wind patterns.
+                                                        Winds blowing from the subtropics towards the equator (trade
+                                                        winds) become northeasterlies (southeasterlies) north (south) of
+                                                        the equator. On the polar side of the subtropics, winds are
+                                                        deflected to give rise to the prevailing westerlies.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="atmosphere-block-list">
+                                <div id="accordion_energy" class="panel-group">
+                                    <div class="panel panel-default">
+                                        <div id="atmosphere2" class="panel-heading border"
+                                            data-bs-target="#collapse_energy" data-bs-parent="#accordion_energy"
+                                            data-bs-toggle="collapse" aria-expanded="true"><strong>Local Winds<span
+                                                    class="dropdown-arrow">&nbsp;</span></strong></div>
+                                        <div id="collapse_energy" class="panel-collapse collapse show" style="">
+                                            <div class="panel-body">
+                                                <p>A number of effects cause localized winds that affect certain areas
+                                                    of a country. The main effects are sea and land breezes, valley
+                                                    winds and mountain winds. The breezes occur because water and land
+                                                    absorb and lose heat from the sun at different rates.</p>
+                                                <p>In Singapore, the sea breeze effect produces the localised afternoon
+                                                    showers and thunderstorms that are common throughout the year.</p>
+                                                <p><a href="/wp-content/uploads/2020/11/sea-breeze_updated.png"><img
+                                                            decoding="async" class="aligncenter wp-image-2205"
+                                                            src="../assets/images/sea-breeze_updated.png"
+                                                            alt="sea breeze" width="600"></a></p>
+                                                <p style="text-align: center;"><em>Schematic of the sea breeze
+                                                        effect</em></p>
+                                                <p>During the day, the land heats much more quickly than the sea,
+                                                    causing air over land to rise. As the warm air rises, cool air from
+                                                    the sea is blown in underneath, producing a sea breeze blowing
+                                                    inland. Cumulus and cumulonimbus clouds develop as the sea breeze
+                                                    front converges with the prevailing winds inland.</p>
+                                                <p><a href="/wp-content/uploads/2015/03/wind3.png"><img decoding="async"
+                                                            class="aligncenter wp-image-2209"
+                                                            src="../assets/images/wind3.png"
+                                                            alt="weather radar and satellite image showing sea breeze induced thunderstorm"
+                                                            width="600" height="280"></a></p>
+                                                <p>The situation is reversed at night, with the cool air over land drawn
+                                                    in under the warm air over the sea, producing a generally weaker
+                                                    land breeze.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="atmosphere-block-list">
+                                <div id="accordion_ozone" class="panel-group">
+                                    <div class="panel panel-default">
+                                        <div id="atmosphere3" class="panel-heading border collapsed"
+                                            data-bs-target="#collapse_ozone" data-bs-parent="#accordion_ozone"
+                                            data-bs-toggle="collapse"><strong>Tropical Monsoon</strong><span
+                                                class="dropdown-arrow">&nbsp;</span></div>
+                                        <div id="collapse_ozone" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <p>Monsoons are large-scale, seasonally changing wind circulations that
+                                                    form due to the temperature differences between land and ocean, like
+                                                    a giant sea breeze.</p>
+                                                <p>Monsoons dominate the climate in the tropical regions of Asia,
+                                                    including Singapore. They are known locally as the Northeast Monsoon
+                                                    and the Southwest Monsoon, and are responsible for much of the
+                                                    variation in rainfall over the regions throughout the year.</p>
+                                                <p>The Northeast Monsoon develops during the northern hemisphere winter
+                                                    between December and March, when the land over much of continental
+                                                    Asia is colder than the ocean. This causes sinking cold air over
+                                                    land to blow towards the ocean, replacing the void left by the
+                                                    rising warm air over the ocean. As the cold air flows southward
+                                                    towards the low pressure systems in the southern hemisphere, it
+                                                    warms up and moistens, leading to the formation of dense rain clouds
+                                                    in the equatorial region.</p>
+                                                <p>The start of the Northeast Monsoon usually heralds the wettest months
+                                                    (wet phase), while its tail end brings the driest months (dry
+                                                    phase), as the ITCZ begins to migrate south.</p>
+                                                <p style="text-align: center;"><a
+                                                        href="/wp-content/uploads/2015/03/wind4.png"><img
+                                                            decoding="async" class="aligncenter wp-image-2210"
+                                                            src="../assets/images/wind4.png"
+                                                            alt="Northeast Monsoon wind flow" width="410"
+                                                            height="386"></a><em>Northeast Monsoon wind flow</em></p>
+                                                <p>&nbsp;</p>
+                                                <p style="text-align: center;"><a
+                                                        href="/wp-content/uploads/2015/03/wind5.png"><img loading="lazy"
+                                                            decoding="async" class="aligncenter wp-image-2211"
+                                                            src="../assets/images/wind5.png"
+                                                            alt="Southwest Monsoon wind flow" width="400"
+                                                            height="370"></a><em>Southwest Monsoon wind flow</em></p>
+                                                <p>The Southwest Monsoon develops during the southern hemisphere winter
+                                                    between June and September, when cold subsiding air flows from the
+                                                    high pressure systems in the southern hemisphere to the warm
+                                                    northern hemisphere.</p>
+                                                <p>Monsoon winds are influenced by the Coriolis effect such that surface
+                                                    winds are deflected to the right in the northern hemisphere to
+                                                    become northeasterly winds during the Northeast Monsoon. During the
+                                                    Southwest Monsoon, they are deflected to the left to become
+                                                    southwesterly winds.</p>
+                                                <p>In between the two monsoon seasons is an inter-monsoon period which
+                                                    is characterised by light and variable winds and warm temperatures.
+                                                    Singapore experiences two inter-monsoon periods in April-May and
+                                                    October-November.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- right -->
+                        <div class="col-3">
+                            <div class="filter-col">
+                                <div class="search-container">
+                                    <form role="search" method="get" id="searchformcms" class="searchform"
+                                        action="https://www.weather.gov.sg/">
+                                        <div class="search-container">
+                                            <button type="submit" id="searchsubmitcms"><img decoding="async"
+                                                    alt="search"
+                                                    src="https://www.weather.gov.sg/wp-content/themes/wiptheme/assets/img/icon-search.png"></button>
+                                            <input type="text" value="" name="s" id="scms" placeholder="Search">
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-link-list">
+            <div class="container">
+                <div class="row">
+                    <div class="col-2">
+                        <ul class="list-unstyled donotresize">
+                            <li class="donotresize">About MSS</li>
+                            <ul>
+                                <li class="donotresize" style="text-transform: none;"><a class="donotresize"
+                                        href="/about-our-organisation/">Our Organisation</a></li>
+                                <li class="donotresize"><a class="donotresize"
+                                        href="/about-our-organisation/#structure">Organisation Structure</a></li>
+                                <li class="donotresize"><a class="donotresize"
+                                        href="/about-our-organisation/#vision">Our Mission and Vision</a></li>
+                                <li class="donotresize"><a class="donotresize" href="/about-corporate-logo/">Corporate
+                                        Logo</a></li>
+                                <li class="donotresize"><a class="donotresize" href="/about-MSS-timeline/">Our
+                                        History</a></li>
+                                <li class="donotresize"><a class="donotresize" href="/about-our-organisation/">Corporate
+                                        Video</a></li>
+                                <li class="donotresize"><a class="donotresize"
+                                        href="/home-all-news/?yearnews=2015">News</a></li>
+                                <li class="donotresize"><a class="donotresize" href="/about-career/">Careers</a></li>
+                                <li class="donotresize"><a class="donotresize" href="/visitus/">Visit Us</a></li>
+                                <li class="donotresize"><a class="donotresize" href="/about-contact-us/">Contact Us</a>
+                                </li>
+                            </ul>
+                        </ul>
+                    </div>
+                    <div class="col-2">
+                        <ul class="list-unstyled donotresize">
+                            <li class="donotresize">Weather</li>
+                            <li class="donotresize"><a class="donotresize"
+                                    href="https://www.weather.gov.sg/weather-forecast-24hrforecast/">Forecasts</a></li>
+                            <li class="donotresize"><a class="donotresize"
+                                    href="https://www.weather.gov.sg/weather-currentobservations-rainfall/">Current
+                                    Observations</a></li>
+                            <li class="donotresize"><a class="donotresize"
+                                    href="https://www.weather.gov.sg/weather-rain-area-50km/">Rain Areas</a></li>
+                            <li class="donotresize"><a class="donotresize"
+                                    href="https://www.weather.gov.sg/weather-satellite-geo-stationary/">Satellite
+                                    Images</a></li>
+                            <li class="donotresize"><a class="donotresize" target="_blank" rel="noopener"
+                                    href="https://www.weather.gov.sg/lightning/">Lightning Information</a></li>
+                            <li class="donotresize"><a class="donotresize"
+                                    href="https://www.weather.gov.sg/weather-marine-waves-height/">Marine Forecasts</a>
+                            </li>
+                            <li class="donotresize"><a class="donotresize"
+                                    href="https://www.weather.gov.sg/weather-world-forecast/">World Forecasts</a></li>
+                            <li class="donotresize"><a class="donotresize"
+                                    href="https://www.weather.gov.sg/weather-uv/">UV Index</a></li>
+                            <li class="donotresize"><a class="donotresize"
+                                    href="https://www.weather.gov.sg/heat-stress/">Heat Stress</a></li>
+                            <!--                                <li><a href="https://www.weather.gov.sg/weather-significant-events/">Significant Weather Events</a></li>-->
+                            <li class="donotresize"><a class="donotresize"
+                                    href="https://www.weather.gov.sg/weather-astronomical-and-tidal-information-today/">Astronomical
+                                    Data and Tides</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-2">
+                        <ul class="list-unstyled donotresize">
+                            <li class="donotresize">Climate</li>
+                            <li class="donotresize"><a class="donotresize"
+                                    href="https://www.weather.gov.sg/climate-historical-daily/">Historical Daily
+                                    Records</a></li>
+                            <li class="donotresize"><a class="donotresize"
+                                    href="https://www.weather.gov.sg/climate-historical-extremes/">Historical
+                                    Extremes</a></li>
+                            <li class="donotresize"><a class="donotresize"
+                                    href="https://www.weather.gov.sg/climate-world-climate/">World Climate</a></li>
+                            <li class="donotresize"><a class="donotresize"
+                                    href="https://www.weather.gov.sg/climate-trends/">Climate Maps</a></li>
+                            <li class="donotresize"><a class="donotresize"
+                                    href="https://www.weather.gov.sg/climate-climate-of-singapore/">Climate Of
+                                    Singapore</a></li>
+                            <li class="donotresize"><a class="donotresize"
+                                    href="https://www.weather.gov.sg/climate-past-climate-trends/">Past Climate
+                                    Trends</a></li>
+                            <li class="donotresize"><a class="donotresize"
+                                    href="https://www.weather.gov.sg/climate-annual-climate-reports/">Annual Reports</a>
+                            </li>
+                            <li class="donotresize"><a class="donotresize"
+                                    href="https://www.weather.gov.sg/climate-el-la/">El Niño / La Niña Status</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-2">
+                        <ul class="list-unstyled donotresize">
+                            <li class="donotresize">Warnings and Advisories</li>
+                            <li class="donotresize"><a class="donotresize"
+                                    href="https://www.weather.gov.sg/warning-heavy-rain/">Heavy Rain Warning</a></li>
+                            <li class="donotresize"><a class="donotresize"
+                                    href="https://www.weather.gov.sg/warning-haze-satellite-image/">Haze Information</a>
+                            </li>
+                            <li class="donotresize"><a class="donotresize"
+                                    href="https://www.weather.gov.sg/warning-tropical-cyclone-information/">Tropical
+                                    Cyclone Information</a></li>
+                            <li class="donotresize"><a class="donotresize"
+                                    href="https://www.weather.gov.sg/warning-regional-seismic-information/">Regional
+                                    Earthquakes/Tsunami</a></li>
+                            <li class="donotresize"><a class="donotresize"
+                                    href="https://www.weather.gov.sg/warning-volcanic-eruption/">Regional Volcanic
+                                    Eruptions</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-2">
+                        <ul class="list-unstyled donotresize">
+                            <li class="donotresize">Learn</li>
+                            <ul>
+                                <li class="donotresize"><a class="donotresize" href="../learn_overview/">Overview</a>
+                                </li>
+                                <li class="donotresize"><a class="donotresize" href="../learn_atmosphere/">Earth’s
+                                        Atmosphere</a></li>
+                                <li class="donotresize"><a class="donotresize" href="../learn_winds/">Winds</a></li>
+                                <li class="donotresize"><a class="donotresize" href="../learn_clouds/">Clouds</a></li>
+                                <li class="donotresize"><a class="donotresize" href="../learn_weather_systems/">Weather
+                                        Systems</a></li>
+                                <li class="donotresize"><a class="donotresize" href="../learn_observations/">Observing
+                                        the Weather</a></li>
+                                <li class="donotresize"><a class="donotresize" href="../learn_phenomena/">Severe
+                                        Weather</a></li>
+                                <li class="donotresize"><a class="donotresize" href="../forecasting-2/">Forecasting</a>
+                                </li>
+                                <li class="donotresize"><a class="donotresize" href="../learn_climate/">Climate</a></li>
+                                <li class="donotresize"><a class="donotresize" href="../learn-optical-effects/">Optical
+                                        Effects</a></li>
+                                <li class="donotresize"><a class="donotresize" href="../learn_tidal/">Tides</a></li>
+                                <li class="donotresize"><a class="donotresize" href="../learn_earthquakes/">Earthquakes
+                                        and Volcanoes</a></li>
+                            </ul>
+                        </ul>
+                    </div>
+                    <div class="col-2">
+                        <ul class="list-unstyled donotresize">
+                            <li class="donotresize">Our Centres</li>
+                            <li class="donotresize"><a class="donotresize" href="https://ccrs.weather.gov.sg/">Centre
+                                    for Climate Research Singapore</a></li>
+                            <li class="donotresize"><a class="donotresize" target="_blank" rel="noopener"
+                                    href="http://asmc.asean.org/">ASEAN Specialised Meteorological Centre</a></li>
+                        </ul>
+                        <ul class="list-unstyled donotresize">
+                            <li class="donotresize">Our Associate sites</li>
+                            <li class="donotresize"><a class="donotresize" href="https://www.nea.gov.sg/">National
+                                    Environment Agency</a></li>
+                            <li class="donotresize"><a class="donotresize" href="https://www.mse.gov.sg">Ministry of
+                                    Sustainability and the Environment</a></li>
+                        </ul>
+                        <!--                            <ul class="list-unstyled donotresize">-->
+                        <!--                                <li class="donotresize">OUR SPECIALISED SERVICES</li>-->
+                        <!--                                <!-- <li><a href="--><!--">Aviation Weather</a></li> -->--&gt;
+                        <!--                            </ul>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- / .footer-link-list -->
+
+        <div class="footer-foot">
+            <div class="container">
+                <div class="row">
+                    <div class="col-6">
+                        <ul class="list-inline text-start donotresize" style="width:max-content">
+                            <li class="donotresize list-inline-item"><a class="donotresize" target="_blank"
+                                    rel="noopener" href="https://www.weather.gov.sg/wip-login.php">Login</a></li>
+                            <li class="donotresize list-inline-item"><a class="donotresize"
+                                    href="https://www.weather.gov.sg/terms-of-use">Terms of Use</a></li>
+                            <li class="donotresize list-inline-item"><a class="donotresize"
+                                    href="https://www.weather.gov.sg/privacy">Privacy policy</a></li>
+                            <li class="donotresize list-inline-item"><a class="donotresize"
+                                    href="https://www.weather.gov.sg/rate-this-website">Rate this site</a></li>
+                            <li class="donotresize list-inline-item"><a class="donotresize"
+                                    href="https://www.weather.gov.sg/supported-browsers">Supported Browsers</a></li>
+                            <li class="donotresize list-inline-item"><a class="donotresize"
+                                    href="https://www.tech.gov.sg/report_vulnerability">Report Vulnerability</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6">
+                        <ul class="list-inline text-end share-link-group donotresize">
+                            <li class="donotresize list-inline-item">Follow us on</li>
+                            <li class="donotresize list-inline-item"><a class="donotresize"
+                                    href="https://www.weather.gov.sg/rss-feed"><img width="22" height="21" alt="RSS"
+                                        src="https://www.weather.gov.sg/wp-content/themes/wiptheme/assets/img/icon-rss.png"></a>
+                            </li>
+                            <li class="donotresize list-inline-item"><a class="donotresize"
+                                    href="https://twitter.com/NEAsg" target="_blank" rel="noopener"><img width="22"
+                                        height="21" alt="Twitter"
+                                        src="https://www.weather.gov.sg/wp-content/themes/wiptheme/assets/img/icon-twitter.png"></a>
+                            </li>
+                            <li class="donotresize list-inline-item"><a class="donotresize"
+                                    href="https://www.youtube.com/user/MetServiceSG" target="_blank" rel="noopener"><img
+                                        width="23" height="23" alt="Youtube"
+                                        src="https://www.weather.gov.sg/wp-content/themes/wiptheme/assets/img/icon-youtube.png"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- / .footer-foot -->
+
+    </footer>
+</body>
+
+</html>
